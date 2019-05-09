@@ -65,7 +65,7 @@ def interact_model(
         saver.restore(sess, ckpt)
 
         while True:
-            raw_text = input("Model prompt >>> ")
+            raw_text = sys.stdin.read()
             while not raw_text:
                 raw_text = sys.stdin.read()
             context_tokens = enc.encode(raw_text)
